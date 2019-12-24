@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CT3" verbose="1" parallel="classes">
+	<test name="basic">
+		<!-- <packages>
+			<package name="com.gwl.dh.gnpm.testscripts"></package>
+		</packages> -->
+		<classes>
+			<class name="com.gwl.dh.gnpm.testscripts.TestAttributes"></class>
+			<!-- <class name="com.gwl.dh.gnpm.testscripts.TestCoupons"></class> -->
+		</classes>
+	</test>
+</suite>
