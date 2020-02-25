@@ -82,7 +82,7 @@ public class TestBase {
 		Test[] test = method.getAnnotationsByType(Test.class);
 		String description = test[0].description();
 		DriverInstance driverInstance = DriverInstance.getInstance(true);
-
+		
 		driver = driverInstance.getDriver();
 		extentTest = DriverInstance.createTest(methodName, description);
 		driverInstance.setExtentTest(extentTest);
@@ -105,39 +105,4 @@ public class TestBase {
 		driver.get(appUrl + "/admin");
 	}
 	
-	public GNPMData getGNPM(String testcaseName){
-		XlsxReader reader = new XlsxReader();
-		List<GNPMData> gnpms = null;
-		// Read
-		try {
-			gnpms = reader.read(GNPMData.class, new File("./src/test/resources/testdata/TestData.xlsx"),
-					"GNPM");
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		GNPMData gnpmFinal = null;
-		
-		for (GNPMData gnpmData : gnpms) {
-			System.out.println(gnpmData);
-			if(gnpmData.getExecution().toLowerCase().equals("yes") && gnpmData.getTestCaseName().toLowerCase().equalsIgnoreCase(testcaseName)){
-				gnpmFinal = gnpmData;
-				break;
-			}
-		}
-
-		if(gnpmFinal == null){
-			throw new RuntimeException("Testcase not available in excel - " + testcaseName);
-		}
-		return gnpmFinal;
-	}
-	
-	public USERS processUser(String name){
-		USERS user = USERS.fromString(name);
-		if(user == null){
-			throw new RuntimeException("User not available in Enum USERS - " + name);
-		}
-		return user;
-	}
 }

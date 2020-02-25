@@ -1,5 +1,6 @@
 package com.slokam.limesurvey.testscripts.admin;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -99,5 +100,9 @@ public class TestAdminUser extends TestBase {
 		String expected = "Success!";
 		String actual = adminUserControlPage.getResultMessage();
 		Assert.assertEquals(actual, expected);
+		
+		
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("", "");
 	}
 }
