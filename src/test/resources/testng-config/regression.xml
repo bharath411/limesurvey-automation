@@ -5,8 +5,10 @@
 
 
 	<test name="reg-test">
-		<packages>
-			<package name="com.slokam.limesurvey.testscripts.admin"></package>
-		</packages>
+		<classes>
+			<class
+				name="com.slokam.limesurvey.testscripts.admin.TestLanguageUpdate"></class>
+		</classes>
+
 	</test>
 </suite>
