@@ -1,19 +1,12 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="limesurvey-regression" verbose="1" parallel="classes" thread-count="4">
+<suite name="limesurvey-regression" verbose="1" parallel="classes"
+	thread-count="4">
 
 
 	<test name="reg-test">
-		<groups>
-			<run>
-				<include name="regression"></include>
-			</run>
-		</groups>
-		<classes>
-
-
-			
-		</classes>
-
+		<packages>
+			<package name="com.slokam.limesurvey.testscripts.admin"></package>
+		</packages>
 	</test>
 </suite>
